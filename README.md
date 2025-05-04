@@ -25,4 +25,10 @@ Este projeto é uma API de autenticação desenvolvida com Java, Spring Boot, Po
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/authenticator-api.git
+git clone https://github.com/rogeriioms/authenticator.git
+
+2. Instale as dependências com o Maven:
+
+```bash
+mvn install
+
