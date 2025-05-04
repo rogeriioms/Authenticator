@@ -25,28 +25,23 @@ Este projeto é uma API de autenticação desenvolvida com Java, Spring Boot, Po
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/rogeriioms/authenticator.git
+git clone https://github.com/rogeriio.ms/authenticator.git
+cd authenticator-api
 ```
 
-2. Instale as dependências com o Maven:
+2. Inicie os containers com Docker Compose:
 
 ```bash
-mvn install
+docker-compose up --build
 ```
 
-3. Configure o banco de dados PostgreSQL e ajuste as variáveis de ambiente conforme necessário.
+A aplicação será iniciada em: [http://localhost:8080](http://localhost:8080)
 
 ---
 
 ## Uso
 
-1. Inicie a aplicação com o Maven:
-
-```bash
-mvn spring-boot:run
-```
-
-2. A API estará acessível em: [http://localhost:8080](http://localhost:8080)
+A API será executada automaticamente após o `docker-compose up`, conectando-se ao banco de dados PostgreSQL também containerizado. As variáveis de ambiente podem ser configuradas no arquivo `.env`.
 
 ---
 
@@ -124,7 +119,7 @@ A autenticação é gerenciada com Spring Security e o token tem validade defini
 
 ## Database
 
-Este projeto utiliza **PostgreSQL**. As tabelas principais incluem:
+Este projeto utiliza **PostgreSQL** via Docker. As tabelas principais incluem:
 
 - **Users**
   - `id` (UUID)
@@ -132,8 +127,6 @@ Este projeto utiliza **PostgreSQL**. As tabelas principais incluem:
   - `email` (único)
   - `password` (hash com bcrypt)
   - `is_verified` (boolean)
-
-Migrações podem ser gerenciadas com Flyway.
 
 ---
 
